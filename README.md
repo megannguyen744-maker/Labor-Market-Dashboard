@@ -12,11 +12,17 @@ As of the latest data, the labor market shows early signs of moderating: job ope
 
 ## Dashboard Pages
 1. **Labor Market Pulse** — current KPI snapshot and rate trends since 2016
-   (<img width="1337" height="746" alt="JOLTS-OEWS PG 1" src="https://github.com/user-attachments/assets/24e61abb-d9d1-4b73-b9f5-d4a6ccd9ffa9" />
-)
-3. **Trend & Momentum** — year-over-year rate comparisons
-4. **Pay Benchmarking** — median wages and employment size across top occupations
-5. **The Verdict** — synthesized takeaway
+   <img width="1337" height="746" alt="JOLTS-OEWS PG 1" src="https://github.com/user-attachments/assets/24e61abb-d9d1-4b73-b9f5-d4a6ccd9ffa9" />
+
+2. **Trend & Momentum** — year-over-year rate comparisons
+   <img width="1336" height="747" alt="JOLTS-OEWS PG 2" src="https://github.com/user-attachments/assets/b6293ebb-5403-4cc1-8050-e7729cb3908a" />
+
+3. **Pay Benchmarking** — median wages and employment size across top occupations
+   <img width="1337" height="746" alt="JOLTS-OEWS PG 3" src="https://github.com/user-attachments/assets/28ec1d8e-050c-4b6b-9bc0-5c4ebfe42ae8" />
+
+4. **The Verdict** — synthesized takeaway
+   <img width="1337" height="747" alt="JOLTS-OEWS PG 4" src="https://github.com/user-attachments/assets/00e90c38-5371-4b99-9376-b01b44e9a3dc" />
+
 
 ## Tools
 Power BI Desktop, Power Query (M), DAX, BLS Public API
