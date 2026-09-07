@@ -1,0 +1,27 @@
+let
+    Source = let
+    Source = Excel.Workbook(File.Contents("C:\Users\Megan\Downloads\all_data_M_2025.xlsx"), null, true),
+    Sheet = Source{[Item="All May 2025 data", Kind="Sheet"]}[Data],
+    PromotedHeaders = Table.PromoteHeaders(Sheet, [PromoteAllScalars=true]),
+    FilteredDetailed = Table.SelectRows(PromotedHeaders, each [O_GROUP] = "detailed"),
+    ChangedTypes = Table.TransformColumnTypes(FilteredDetailed, {
+        {"TOT_EMP", Int64.Type},
+        {"H_MEAN", type number}, {"A_MEAN", type number},
+        {"H_MEDIAN", type number}, {"A_MEDIAN", type number},
+        {"H_PCT10", type number}, {"H_PCT25", type number}, {"H_PCT75", type number}, {"H_PCT90", type number},
+        {"A_PCT10", type number}, {"A_PCT25", type number}, {"A_PCT75", type number}, {"A_PCT90", type number}
+    }),
+    RemovedErrors = Table.RemoveRowsWithErrors(ChangedTypes, {"TOT_EMP", "A_MEDIAN"}),
+    Sorted = Table.Sort(RemovedErrors, {{"TOT_EMP", Order.Descending}}),
+    KeptTop75 = Table.FirstN(Sorted, 75),
+    RemovedColumns = Table.SelectColumns(KeptTop75, {
+        "OCC_CODE", "OCC_TITLE", "TOT_EMP", 
+        "H_MEAN", "A_MEAN", "H_MEDIAN", "A_MEDIAN",
+        "H_PCT10", "H_PCT25", "H_PCT75", "H_PCT90",
+        "A_PCT10", "A_PCT25", "A_PCT75", "A_PCT90"
+    })
+in
+    RemovedColumns,
+    #"Changed Type" = Table.TransformColumnTypes(Source,{{"A_MEDIAN", Currency.Type}})
+in
+    #"Changed Type"
