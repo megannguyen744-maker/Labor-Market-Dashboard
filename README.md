@@ -22,7 +22,8 @@ As of the latest data, the labor market shows early signs of moderating: job ope
 
 4. **The Verdict** — synthesized takeaway
    <img width="1337" height="747" alt="JOLTS-OEWS PG 4" src="https://github.com/user-attachments/assets/00e90c38-5371-4b99-9376-b01b44e9a3dc" />
-
+   
+## Power Query (M) Scripts \n Raw M code for the JOLTS API pull and OEWS import is available in the /queries folder
 
 ## Tools
 Power BI Desktop, Power Query (M), DAX, BLS Public API
